@@ -1,0 +1,141 @@
+#left_col {
+   float:left;
+   width:450px;
+}
+#right_col {
+   float:right;
+   width:450px;
+}
+
+#clear {
+ clear:both;
+}
+
+#text {
+    width: 960px;
+    margin: 0 auto;
+}
+
+#text1 {
+    left: 10px;
+    top: 0;
+}
+
+#text2 {
+    left: 710px;
+    top: 0;
+}
+
+#text3 {
+    left: 10px;
+    top: 155px;
+}
+
+#text4 {
+    left: 710px;
+    top: 170px;
+}
+
+#text5 {
+    left: 170px;
+    top: 440px;
+    width: 600px;
+    text-align: center;
+}
+
+#slider {
+    position: absolute;
+    width: 500px;
+    height: 10px;
+    bottom: 80px;
+    left: 230px;
+    background: white;
+}
+
+path {
+    stroke: steelblue;
+    stroke-width: 1;
+    fill: none;
+}
+
+.axis path,
+.axis line {
+    fill: none;
+    stroke: black;
+    shape-rendering: crispEdges;
+}
+
+.axis text {
+    font-family: sans-serif;
+    font-size: 14px;
+}
+
+#alias_graph {
+    position: absolute;
+    width: 400px;
+    top: 50px;
+    left: 250px;
+}
+
+#l1_bar {
+    position: absolute;
+    width: 120px;
+    top: 10px;
+    left: 600px;
+}
+
+#graph_container {
+    position: relative;
+    width: 960px;
+    height: 500px;
+    margin: 0 auto;
+    top: 10px;
+    z-index: 10;
+    border-radius: 10px;
+    border: 2px solid #ccc;
+}
+
+.graph_text {
+    position: absolute;
+    width: 220px;
+    padding: 5px;
+    text-align: left;
+    opacity: 0.7;
+    background: white;
+    border-radius: 5px;
+}
+
+#func {
+    position: absolute;
+    width: 140px; /* 300px; */
+    top: 50px; /*50px;*/
+    left: 320px; /*320px;*/
+    background: white;
+    opacity: 0.8;
+    z-index: -10;
+    table-layout: fixed;
+}
+
+.func td {
+    width: 65px;
+    text-align: left; 
+    vertical-align: bottom;
+}
+
+.firstcharacter {
+    float: left; 
+    color: #903;
+    width: 35px;
+    font-size: 60px; /* 75 */
+    line-height: 60px;
+    padding-top: 4px;
+    padding-right: 8px;
+    padding-left: 3px; 
+    font-family: Georgia; 
+}
+
+#sparse1 {
+    cursor: pointer;
+    border-bottom: 1px dotted green;
+}
+

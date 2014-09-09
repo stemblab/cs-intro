@@ -1,0 +1,147 @@
+<div id="text">
+
+  <h2>Introduction to Compressive Sensing</h2>
+
+  <div id="left_col">
+    [http://en.wikipedia.org/wiki/Digital_signal, Digital signals]
+    (i.e., functions) essentially have __integer__ values. They are
+    also defined at integer __times__ (i.e., at equally spaces
+    instants, for some time unit).  A value, at an instant of time, is
+    a __sample__. In many applications (e.g., mobile phones) digital
+    signals are obtained from
+    [http://en.wikipedia.org/wiki/Analog_signal, analog signals] by
+    [http://en.wikipedia.org/wiki/Sampling_(signal_processing),
+    sampling].
+
+    A vital question is __how many__ samples are required to recover
+    the orginal analog signal. This determines, for example, the time
+    a movie takes to download or the amount of spectrum that
+    [http://en.wikipedia.org/wiki/Verizon, Verizon] needs to buy.  A
+    contemporary approach (this century!) to reducing the number of
+    samples is known as
+    [http://en.wikipedia.org/wiki/Compressive_sensing, Compressive
+    Sensing].
+
+    As a [http://en.wikipedia.org/wiki/Toy_problem, toy problem]
+    consider a quadratic. Three samples uniquely define a quadratic
+    and we can't do with fewer __unless we know something else__.
+    Surprisingly, "something else" can be that the signal is *sparse*.
+
+  </div>
+
+  <div  id="right_col">
+ 
+    For the quadratic, sparsity can mean it is __either__ a constant
+    ($f(t)=a_0$), a line ($f(t)=a_1t$) or a parabola ($f(t)=a_2t^2$)
+    (but we don't know which!).
+
+    Many signals in applications are sparse. Essentially, a signal is
+    sparse if we can find a way of representing it that involves many
+    zeros (without needing know exactly what is zero). For instance,
+    mobile phone signals may occupy about 1 MHz, somewhere within a
+    band of 50 MHz---the signal is sparse because although we may not
+    know just where it is we know it only occupies 1 MHz with zero
+    energy at most frequencies.
+
+    In the box below we see that we can recover $f(t)=a_0+a_1 t +a_2
+    t^2$ from only *two* samples---if we know that it has only one
+    non-zero coefficient (i.e., is 1-sparse).
+
+  </div>
+
+  <div id="clear"></div>
+
+</div>
+
+<div>
+
+  <div id="graph_container">
+
+    <div class="graph_text" id="text1">
+
+      <span class="firstcharacter" id="first_step">1</span> With too
+      few samples a signal has [http://en.wikipedia.org/wiki/Aliasing
+      aliases].  E.g.,
+      $f(t)=\color{red}{a_0}+\color{blue}{a_1}t+\color{green}{a_2}t^2$
+      with two samples.
+
+    </div>
+
+    <div class="graph_text" id="text2">
+
+      <span class="firstcharacter">2</span> Move the slider & watch
+      $\color{red}{|a_0|}$, $\color{blue}{|a_1|}$ and
+      $\color{green}{|a_2|}$ in the bar.  The number of colors is the
+      __sparsity__ (number of nonzero coefficients).
+
+    </div>
+
+    <div class="graph_text" id="text3">
+
+      <span class="firstcharacter">3</span>
+      A <span id='sparse1'>1-sparse</span> $f(t)$ has one color in the
+      bar and is *unique*.  If we __know__ $f(t)$ is 1-sparse, __two
+      samples are enough__.  This is
+      [http://en.wikipedia.org/wiki/Compressed_sensing, compressive
+      sensing].
+
+    </div>
+
+    <div class="graph_text" id="text4">
+
+      <span class="firstcharacter">4</span> In practice, find $f(t)$
+      by __minimizing__ the total bar height ($p=1$
+      [http://en.wikipedia.org/wiki/Norm_(mathematics), norm],
+      $\ell_1$) and not by __searching__ for one color ($p=0$ norm,
+      $\ell_0$).
+
+    </div>
+
+    <input type="range" id="slider" step="0.1" min="-1" max="3" value="-1">
+
+    <div class="graph_text" id="text5">
+      Learn more: [/m/b007z, Intuitive compressive sensing]
+    </div>
+
+    <div id ="func"></div>
+    <div id="alias_graph"></div>
+    <div id="l1_bar"></div>
+
+  </div>
+
+</div>
+
+<div id="text">
+
+  <br></br>
+
+  <div id="left_col">
+
+    To appreciate how minimizing $\ell_1$ (the total bar height) finds
+    sparse solutions consider <span id='sparse1'>$f(t)=t^2$
+    above</span> where $\ell_0=1$ (one color in the bar). For this
+    special case, if we cross out the zero-valued terms from $\ell_1$,
+    we have $$ \require{cancel}
+    \ell_1=\xcancel{\color{red}{|a_0|}}+\xcancel{\color{blue}{|a_1|}}+\color{green}{|a_2|}=1
+    $$ As we move from this solution the crossed terms will
+
+  </div>
+
+  <div id="right_col">
+
+    begin to contribute---no matter which way we move (try it!).  In
+    this case, and __almost certainly__ in higher dimensions with high
+    sparsity (where there are many more coefficients crossed than
+    not), the contribution from the crossed terms will dominate and
+    cause $\ell_1$ to increase.  Since $\ell_1$ increases *whichever
+    way we move*, $\ell_1$ is a minimum where $\ell_0=1$.  Thus, we
+    can *find* $\ell_0=1$ (i.e., the sparse solution) by minimizing
+    $\ell_1$.
+
+  </div>
+    
+  <div id="clear"></div>
+    
+</div>
+
+
