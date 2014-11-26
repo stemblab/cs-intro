@@ -140,3 +140,5 @@ path {
     border-bottom: 1px dotted green;
 }
 
+.foot .puzlet-link { float:left }
+.foot .org-link { float:right }
